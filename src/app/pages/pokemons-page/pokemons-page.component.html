@@ -1,0 +1,26 @@
+<h1 class="text-3xl">Listado de Pokemons</h1>
+<h2 class="text-xl">Pagina Actual</h2>
+
+<hr class="my-2">
+
+@if(pokemons().length !== 0){
+<app-pokemons-list [pokemons]="pokemons()"/>
+
+} @else {
+<app-pokemons-list-skeleton />
+
+}
+
+
+
+
+
+
+<div class="flex justify-between">
+  <button (click)="loadPokemons(-1)" class="mt-2">
+    Anteriores
+  </button>
+  <button (click)="loadPokemons(+1)" class="mt-2">
+    Siguientes
+  </button>
+</div>
